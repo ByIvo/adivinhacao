@@ -1,0 +1,32 @@
+<div class="col-lg-3"></div>
+<div class="col-lg-6">
+	<div>
+		<form class="form-horizontal">
+			<div class="form-group">
+				<div class="input-group">
+					<input type="text" class="col-lg-3" ng-repeat="assertValue in assertation track by $index" ng-model="assertation[$index]" />
+				</div>
+				<div>
+					{{assertation}}
+				</div>
+			</div>
+			<div class="form-group">
+				<table class="table table-hover">
+					<tr ng-repeat="userTry in game.tries">
+						<td class="input-group">
+							<div class="form-control">
+								<span class="assertation">
+									{{userTry.userTry.join(' ')}}
+								</span>
+							</div>
+							<div class="input-group-addon">
+								{{userTry.resultado.formatado}}
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</form>
+	</div>
+</div>
+<div class="col-lg-3"></div>
