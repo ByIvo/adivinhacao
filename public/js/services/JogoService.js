@@ -14,9 +14,11 @@ angular.module('adivinhacao').service('Jogo', function()
 					return game.length;
 				};
 
-			return 	{'game': game,
-					'tries': tries,
-					'length': length};
+			return 	{
+				'game': game,
+				'tries': tries,
+				'length': length
+			};
 		};
 
 		var compare = function (game, userTry)

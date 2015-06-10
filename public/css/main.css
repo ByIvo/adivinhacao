@@ -1,7 +1,27 @@
-#assertation, .assertation
+.navbar-size
 {
-	letter-spacing: 1em;
+	height: 170px;
+}
+
+.input-assertation
+{
+	border: 0px none;
+	font-size: 3em;
+	height: 2em;
 	text-align: center;
-	font-size: 5em;
-	height: 1em;
+}
+
+.tentativas
+{
+	margin-top: 170px;
+}
+
+.exib-assertation
+{
+	font-size: 3em;
+}
+
+.exib-resultado-assertation
+{
+	font-size: 2em !important;
 }
