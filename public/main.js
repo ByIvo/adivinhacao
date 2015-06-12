@@ -1,4 +1,4 @@
-angular.module('adivinhacao',['ngRoute'])
+angular.module('adivinhacao',['ngRoute', 'ngModal'])
 	.config(function($routeProvider)
 		{
 			$routeProvider

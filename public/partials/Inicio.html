@@ -1,10 +1,10 @@
 <nav class="navbar navbar-default navbar-fixed-top navbar-size">
 	<div class="container">
 			<div class="col-lg-6 col-lg-offset-3">
-				<form class="form-horizontal">
+				<form class="form-horizontal form-fixed">
 					<div class="form-group">
 						<div class="form-control input-group">
-							<input type="text" maxlength=1 class="col-lg-3 input-assertation" ng-repeat="assertValue in assertation track by $index" ng-model="assertation[$index]" />
+							<input type="text" maxlength=1 class="input-assertation" ng-class="[cssColum.column, $first ? cssColum.offset : '']" ng-repeat="assertValue in assertation track by $index" ng-model="assertation[$index]" />
 							
 							<div class="col-lg-12 text-center">
 								<button class="btn btn-primary" ng-click="compare()">
@@ -12,21 +12,21 @@
 								</button>
 							</div>
 						</div>
-						<p class="text-right">
+						<h5 class="text-center">
 							Tentativas realizadas: {{game.tries.length}}
-						</p>
+						</h5>
 					</div>
 				</form>
 			</div>
 	</div>
 </nav>
 <div class="tentativas container">
-	<div class="col-lg-6 col-lg-offset-3">
+	<div class="col-lg-4 col-lg-offset-4">
 		<ul class="list-group">
-			<li class="list-group-item" ng-repeat="userTry in game.tries">
-				<p class="exib-assertation text-center">
+			<li class="list-group-item text-center" ng-repeat="userTry in game.tries">
+				<span class="exib-assertation text-center">
 					{{userTry.userTry.join(' ')}}
-				</p>
+				</span>
 				<div class="badge exib-resultado-assertation">
 					{{userTry.resultado.formatado}}
 				</div>
@@ -34,3 +34,7 @@
 		</ul>
 	</div>
 </div>
+
+<modal-dialog show="true">
+		
+</modal-dialog>

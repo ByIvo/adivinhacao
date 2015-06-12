@@ -9,6 +9,8 @@ angular.module('adivinhacao').service('Jogo', function()
 			var game = _.sample(available, $quantity);
 			var tries = [];
 
+			console.log(game);
+
 			var length = function()
 				{
 					return game.length;
