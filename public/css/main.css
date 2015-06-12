@@ -1,6 +1,88 @@
+@font-face
+{
+	font-family: 'Roboto';
+	src: local('Roboto-Medium.ttf'), url('fonts/Roboto/Roboto-Medium.ttf');
+}
+
+@font-face
+{
+	font-family: 'Roboto Slab';
+	src: local('RobotoSlab-Bold.ttf'), url('fonts/Roboto_Slab/RobotoSlab-Bold.ttf');
+	font-weight: bold;
+}
+
+body
+{
+	color: #FFFFFF;
+	background-color: #81BCCD;
+	font-family: 'Roboto','Helvetica';
+	font-weight: bold;
+	margin-top: 175px;
+}
+
+h1, h2, h3, h4, h5, h6, p, div
+{
+	cursor: default;
+	user-select: none;
+	-webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+h1.titulo
+{
+	color: #FFFFFF;
+	font-size: 50px;
+	margin: 0px;
+	margin-top: 10px;
+}
+
+h1.interrogacao
+{
+	font-size: 95px;
+	color: #F65292;
+	margin: 0px;
+
+	text-shadow: 3px 3px 0px #FFFFFF;
+}
+
 .navbar-size
 {
 	height: 170px;
+	background-color: #51757F !important;
+
+	-webkit-box-shadow: 0px 5px 5px 0px rgba(41,58,64,1);
+	-moz-box-shadow: 0px 5px 5px 0px rgba(41,58,64,1);
+	box-shadow: 0px 5px 5px 0px rgba(41,58,64,1);
+}
+
+div.range
+{
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+h2.range
+{
+	margin: 0px;
+	font-size: 25px;
+}
+
+button.padrao
+{
+	background-color: #F65292;
+	border: 0px;
+	height: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-size: 20px;
+}
+
+button.padrao:active
+{
+	top: 2px;
 }
 
 .form-fixed
