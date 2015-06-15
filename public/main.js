@@ -1,18 +1,18 @@
-angular.module('adivinhacao',['ngRoute', 'ngModal'])
-	.config(function($routeProvider)
+var App = angular.module('adivinhacao',['ngRoute']);
+
+App.config(function($routeProvider)
+{
+	$routeProvider
+		.when('/', 
 		{
-			$routeProvider
-			.when('/',
-			{
-				templateUrl: 'partials/Inicio.html',
-				controller: 'InicioController'
-			})
-			.when('/jogar',
-			{
-				templateUrl: 'partials/jogar',
-				controller: 'JogoController'
-			})
-			.otherwise({'redirect_to': '/'});
+			templateUrl: 'partials/Inicio.html',
+			controller: 'InicioController'
+		})
+		.when('/jogo',
+		{
+			templateUrl: 'partials/Jogo.html',
+			controller: 'JogoController'
+		})
 });
 
 _.mixin({

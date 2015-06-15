@@ -1,36 +1,41 @@
-var available = _.range(10);
 
-angular.module('adivinhacao').service('Jogo', function()
+angular.module('adivinhacao').service('Game', function()
 	{
-		var games = [];
-
-		function newGame($quantity)
+		function newGame($difficulty)
 		{
-			var game = _.sample(available, $quantity);
+			var available = _.range(10);
+			var selected = _.sample(available, $difficulty);
+			var hasEnded = false;
+			var length = selected.length;
 			var tries = [];
 
-			console.log(game);
 
-			var length = function()
+			function compare(userTry)
+			{
+				var result = _.test_adivinhacao(this.selected, userTry);
+				this.tries.push({'userTry': userTry, 'resultado': result});
+
+				this.hasEnded = result.corretos == this.length;
+
+				if(this.hasEnded)
 				{
-					return game.length;
-				};
+					return {
+						'tries': this.tries,
+						'selected': this.selected.slice(0)
+					};
+				}
 
+				return {};
+			};
+			
 			return 	{
-				'game': game,
+				'selected': selected,
 				'tries': tries,
-				'length': length
+				'length': length,
+				'compare': compare,
+				'hasEnded': hasEnded
 			};
 		};
 
-		var compare = function (game, userTry)
-		{
-			var result = _.test_adivinhacao(game.game, userTry);
-			game.tries.push({'userTry': userTry, 'resultado': result});
-
-			return result.corretos == game.length();
-		};
-
-		return {'games' : games, 'newGame': newGame, 'compare' : compare};
-
+		return {'new': newGame};
 	});

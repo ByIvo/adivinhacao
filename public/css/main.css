@@ -18,6 +18,7 @@ body
 	font-family: 'Roboto','Helvetica';
 	font-weight: bold;
 	margin-top: 175px;
+	font-size: 20px;
 }
 
 h1, h2, h3, h4, h5, h6, p, div
@@ -34,14 +35,14 @@ h1, h2, h3, h4, h5, h6, p, div
 h1.titulo
 {
 	color: #FFFFFF;
-	font-size: 50px;
+	font-size: 2.5em;
 	margin: 0px;
 	margin-top: 10px;
 }
 
 h1.interrogacao
 {
-	font-size: 95px;
+	font-size: 3.8em;
 	color: #F65292;
 	margin: 0px;
 
@@ -52,6 +53,7 @@ h1.interrogacao
 {
 	height: 170px;
 	background-color: #51757F !important;
+	margin: 0px;
 
 	-webkit-box-shadow: 0px 5px 5px 0px rgba(41,58,64,1);
 	-moz-box-shadow: 0px 5px 5px 0px rgba(41,58,64,1);
@@ -67,7 +69,7 @@ div.range
 h2.range
 {
 	margin: 0px;
-	font-size: 25px;
+	font-size: 1.25em;
 }
 
 button.padrao
@@ -77,7 +79,14 @@ button.padrao
 	height: 40px;
 	margin-top: 10px;
 	margin-bottom: 10px;
-	font-size: 20px;
+	font-size: 1em;
+	top: 0;
+
+	-webkit-transition: top 50ms;
+	-moz-transition: top 50ms;
+	-ms-transition: top 50ms;
+	-o-transition: top 50ms;
+	transition: top 25ms;
 }
 
 button.padrao:active
@@ -85,32 +94,137 @@ button.padrao:active
 	top: 2px;
 }
 
-.form-fixed
+button.padrao[disabled="disabled"]
 {
-	margin: 5px;
+	background-color: #7f8c8d;
+	cursor: not-allowed;
 }
 
-.input-assertation
+input.input-assertation
 {
 	border: 0px none;
-	font-size: 3em;
-	height: 2em;
+	font-size: 2em;
 	text-align: center;
+	margin-top: 10px;
+	padding: 0px;
+	background: transparent;
+
+	-moz-appearance: textfield;
+	-webkit-appearance: none;
+	appearance: none;
 }
 
-.tentativas
+input.input-assertation::-webkit-input-placeholder 
 {
-	margin-top: 175px;
+   color: #FFFFFF;
 }
 
-.exib-assertation
+input.input-assertation:-moz-placeholder 
+{
+   color: #FFFFFF;
+}
+
+input.input-assertation::-moz-placeholder 
+{
+   color: #FFFFFF;  
+}
+
+input.input-assertation:-ms-input-placeholder 
+{  
+   color: #FFFFFF;  
+}
+
+input.input-assertation::selection
+{
+	color: #51757F;
+	background-color: #FFFFFF;
+}
+
+h5.error-message
+{
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+	height: 10px;
+}
+
+div.assertation-exibition
+{
+	border-bottom: 1px solid #FFFFFF;
+	height: 1.5em;
+}
+
+table.assertation
+{
+	width: 100%;
+}
+
+tr.assertation
+{
+	border-bottom: 2px solid #FFFFFF;
+}
+
+td.assertation
 {
 	font-size: 1em;
-	letter-spacing: 0.5em;
 }
 
-.exib-resultado-assertation
+td.assertation-result
 {
-	font-size: 1em !important;
-	margin-top: 0.25em;
+	font-size: 1.5em;
+}
+
+div.mirror
+{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	background-color: #000000;
+	top: 0px;
+	left: 0px;
+	z-index: 10000;
+	opacity: 0.6;
+}
+
+div.modal
+{
+	position: absolute;
+	width: 300px;
+	max-height: 255px;
+	background-color: #51757F;
+	padding: 10px;
+	
+	top: 25%;
+	left: 50%;
+    transform: translate(-50%, -25%);
+    -webkit-transform: translate(-50%, -25%);
+    -moz-transform: translate(-50%, -25%);
+    -o-transform: translate(-50%, -25%);
+    -ms-transform: translate(-50%, -25%);
+
+	display: block;
+	z-index: 10001;
+}
+
+div.modal h1, div.modal h2, div.modal h3, div.modal h4, div.modal h5, div.modal h6
+{
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+div.modal button.menu
+{
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+div.modal button.play-again
+{
+	margin-top: 15px;
+	margin-bottom: 5px;
+}
+
+.permit-modal-show
+{
+	display: block !important;
 }
